@@ -7,9 +7,9 @@ import requests
 
 
 def Pic(path):
-    appid = '23666445'
-    client_id = 'd0MUam8Q0Q4wVETpPTnUeoVI'
-    client_secret = 'qiPQbZ2w51uLshOKSCzAlzNdmQPYD449'
+    appid = ''
+    client_id = ''
+    client_secret = ''
     host = 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials'
     host += "&client_id=%s&client_secret=%s" % (client_id, client_secret)
 
@@ -17,7 +17,7 @@ def Pic(path):
     response = session.get(host)
     access_token = response.json().get("access_token")
 
-    request_url = "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/classification/spepic"
+    request_url = ""
     with open(path, 'rb') as f:
         image = base64.b64encode(f.read()).decode('UTF8')
     headers = {
